@@ -6,7 +6,8 @@
     </div>
     <div class="circle-selector-container">
         <div 
-            (click)="onClick($any($event))" 
+            #circle
+            (click)="onClick($event)" 
             class="circle-selector-circle" 
             [style]="circleStyle" 
             *appCircles="numberList; let i=index;"

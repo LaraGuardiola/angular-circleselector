@@ -23,21 +23,25 @@ export class NavigationLineComponent implements OnInit {
   @Input() lineWidth: number;
   @Input() lineHeight: number
 
+
   @Input() lineStyle = {
     circle: {},
     line: {}
   }
   @Input() listStyle = {}
-
+  //* margin-bottom = .nav-line height + (.nav-line width / 2)*/
   constructor() {
-    this.elemList = ['Datos personales', 'Situación actual', 'Stituación económica', 'Oferta', 'Identificación', 'Firma y documentación']
+    this.elemList = ['Datos personales', 'Situación actual', 'Situación económica', 'Oferta', 'Identificación', 'Firma y documentación']
     this.symbol = faCheck
-    this.circleWidth = 20
-    this.circleHeight = 20
+    this.circleWidth = 40
+    this.circleHeight = 40  
     this.lineWidth = 4
-    this.lineHeight = 30
+    this.lineHeight = 80
     this.listStyle = {
       fontFamily: 'Arial',
+      marginTop: `${this.circleWidth / 6}px`,
+      marginBottom: `${ this.lineHeight + (this.circleWidth * 0.3)}px`,
+      fontSize: `${this.circleHeight * 0.6}px`
     },
     this.lineStyle = {
       circle: {

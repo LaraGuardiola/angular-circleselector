@@ -16,7 +16,6 @@
     border-radius: 50%;
     background-color: #18acb5;
     color: white;
-    font-size: 0.7em
 }
 
 /* LEFT IS HALF OF .nav-circle width less half of the width.nav-line
@@ -32,8 +31,9 @@
 /* margin-bottom = .nav-line height + (.nav-line width / 2)*/
 
 .list-line {
+    display: flex;
+    align-items: center;
     margin-left: 8px;
-    margin-bottom: 32px;
     font-family: 'Arial';
 }
 

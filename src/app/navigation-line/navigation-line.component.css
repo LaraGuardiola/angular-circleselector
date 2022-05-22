@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #18acb5;
+}
+
+.nav-line{
+    width: 4px;
+    height: 30px;
+    background-color: #18acb5;
+    position: relative;
+    left:8px;
+}
+
+/* LEFT IS HALF OF .nav-circle width less half of the width.nav-line
+(.nav-circle width / 2) - (.nav-line width / 2) */

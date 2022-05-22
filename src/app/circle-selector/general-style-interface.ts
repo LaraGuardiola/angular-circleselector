@@ -7,4 +7,5 @@ export interface generalStyle {
     fontWeight?: string;
     backgroundColor?: string;
     margin?: string;
+    border?: string;
   }

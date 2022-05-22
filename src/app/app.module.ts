@@ -5,14 +5,15 @@ import { AppComponent } from './app.component';
 import { CircleSelectorComponent } from './circle-selector/circle-selector.component';
 import { CirclesDirective } from './circle-selector/circles.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CircleSelectorComponent,
-    CirclesDirective,
+    CirclesDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class CirclesDirective {
 
   @Input('appCircles') set circles(numArray: (number|string)[]) {
     this.viewContainer.clear()
-    numArray.forEach( (num) => this.viewContainer.createEmbeddedView(this.templateRef, {
+    numArray.forEach( num => this.viewContainer.createEmbeddedView(this.templateRef, {
       index: numArray.indexOf(num)
     }))
   }

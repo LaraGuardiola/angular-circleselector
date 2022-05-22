@@ -1,2 +1,24 @@
-<app-circle-selector [numberList]="[1,2,3,6,12,24]" [title]="'Circle Selector'"></app-circle-selector>
-<app-circle-selector [defaultValue]="'5+'"></app-circle-selector>
+<app-circle-selector ></app-circle-selector>
+<app-circle-selector
+    [title]="title" 
+    [numberList]="[1,2,3,6,12,24]" 
+    [highlightedBackground]="highlightedBackground"
+    [highlightedColor]="highlightedColor"
+    [defaultBackground]="defaultBackground"
+    [defaultColor]="defaultColor"
+    [defaultValue]="1" 
+    [circleStyle]="circleStyle"
+    [titleStyle]="titleStyle"
+></app-circle-selector>
+<app-circle-selector
+    [title]="'Probando el titulo'" 
+    [numberList]="['A','B','C','D']" 
+    [highlightedBackground]="highlightedBackground1"
+    [highlightedColor]="highlightedColor1"
+    [defaultBackground]="defaultBackground1"
+    [defaultColor]="defaultColor1"
+    [defaultValue]="'C'" 
+    [circleStyle]="circleStyle1"
+    [titleStyle]="titleStyle1"
+>
+</app-circle-selector>

@@ -8,7 +8,6 @@
     display: flex;
 }
 
-
 .nav-circle {
     display: flex;
     flex-direction: column;
@@ -22,6 +21,9 @@
     font-size: 0.7em
 }
 
+/* LEFT IS HALF OF .nav-circle width less half of the width.nav-line
+(.nav-circle width / 2) - (.nav-line width / 2) */
+
 .nav-line{
     display: flex;
     flex-direction: column;
@@ -32,12 +34,14 @@
     left:8px;
 }
 
+/* margin-bottom = .nav-line height + (.nav-line width / 2)*/
+
 .list-line {
-    margin-left: 5px;
+    margin-left: 8px;
     margin-bottom: 32px;
+    font-family: 'Arial';
 }
 
 
 
-/* LEFT IS HALF OF .nav-circle width less half of the width.nav-line
-(.nav-circle width / 2) - (.nav-line width / 2) */
+

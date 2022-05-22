@@ -1,17 +1,17 @@
 <div class="navigation-line">
     <div class="line">
         <ng-container *appNavigationLine="elemList; let i = index">
-            <div class="nav-circle">
+            <div class="nav-circle" [style]="lineStyle.circle">
                 <fa-icon [icon]="symbol"></fa-icon>
             </div>
-            <div class="nav-line" *ngIf="i !== elemList.length - 1">
+            <div class="nav-line" [style]="lineStyle.line" *ngIf="i !== elemList.length - 1">
             </div>
         </ng-container>
     </div>
 
     <div class="list">
         <ng-container *appNavigationLine="elemList; let i = index">
-            <div class="list-line">
+            <div class="list-line" [style]="listStyle">
                 {{ elemList[i] }}
             </div>
         </ng-container> 

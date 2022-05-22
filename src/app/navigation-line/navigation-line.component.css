@@ -13,8 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
     background-color: #18acb5;
     color: white;
@@ -27,11 +25,8 @@
 .nav-line{
     display: flex;
     flex-direction: column;
-    width: 4px;
-    height: 30px;
     background-color: #18acb5;
     position: relative;
-    left:8px;
 }
 
 /* margin-bottom = .nav-line height + (.nav-line width / 2)*/

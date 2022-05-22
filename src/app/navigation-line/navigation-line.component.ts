@@ -32,10 +32,10 @@ export class NavigationLineComponent implements OnInit {
   constructor() {
     this.elemList = ['Datos personales', 'Situación actual', 'Stituación económica', 'Oferta', 'Identificación', 'Firma y documentación']
     this.symbol = faCheck
-    this.circleWidth = 30
-    this.circleHeight = 30
+    this.circleWidth = 20
+    this.circleHeight = 20
     this.lineWidth = 4
-    this.lineHeight = 50
+    this.lineHeight = 30
     this.listStyle = {
       fontFamily: 'Arial',
     },
@@ -43,6 +43,7 @@ export class NavigationLineComponent implements OnInit {
       circle: {
         width: `${this.circleWidth}px`,
         height: `${this.circleHeight}px`,
+        fontSize: `${this.circleHeight * 0.6}px`,
       },
       line: {
         width: `${this.lineWidth}px`,

@@ -21,6 +21,7 @@ export class AppComponent {
   highlightedColor1 = 'red'
   defaultBackground1 = '#FFFFFF'
   defaultColor1 = '#000000'  
+  lineStyle = {};
   constructor(){
     this.titleStyle = {
       fontFamily: 'Garamond',
@@ -50,6 +51,20 @@ export class AppComponent {
       margin: '1em',
       border: '1px solid red',
       fontWeight: 'bold'
+    },
+    this.lineStyle = {
+      circle: {
+        width: `50px`,
+        height: `50px`,
+        fontSize: `${50 * 0.6}px`,
+        backgroundColor: 'grey',
+      },
+      line: {
+        width: `6px`,
+        height: `60px`,
+        left: `${(50 / 2) - (60 / 2)}px`,
+        backgroundColor: 'grey',
+      }
     }
   }
 }

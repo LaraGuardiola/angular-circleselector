@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { generalStyle } from './circle-selector/general-style-interface';
 
 
@@ -8,6 +9,7 @@ import { generalStyle } from './circle-selector/general-style-interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //*circle selector properties
   title = 'Número de personas';
   titleStyle: generalStyle = {}
   circleStyle: generalStyle = {}
@@ -20,11 +22,40 @@ export class AppComponent {
   highlightedBackground1 = '#FFFFFF'
   highlightedColor1 = 'red'
   defaultBackground1 = '#FFFFFF'
-  defaultColor1 = '#000000'  
-  lineStyle = {
-    circle: {},
-    line: {}
+  defaultColor1 = '#000000'
+
+  //* navigation line properties  
+  circleStyle2 = {
+    width: '',
+    height: '',
+    fontSize: '',
+    backgroundColor: '',
   }
+  lineStyle2 = {
+    width: '',
+    height: '',
+    left: '',
+    backgroundColor: '',
+  }
+  listStyle2 = {
+    fontFamily: '',
+    marginTop: ``,
+    marginBottom: ``,
+    fontSize: ``,
+    color: '',
+  }
+  elemList: string[];
+  symbol: any;
+  size: number;
+  lineWidth: number;
+  lineHeight: number;
+  defaultValue: number;
+  defaultBGcolor: string
+  highlightedBGColor: string
+  defaultListColor: string
+  completeColor: string
+
+
   constructor(){
     this.titleStyle = {
       fontFamily: 'Garamond',
@@ -55,19 +86,35 @@ export class AppComponent {
       border: '1px solid red',
       fontWeight: 'bold'
     }
-    this.lineStyle = {
-      circle: {
-        width: `50px`,
-        height: `50px`,
-        fontSize: `${50 * 0.6}px`,
-        backgroundColor: 'black',
-      },
-      line: {
-        width: `$6px`,
-        height: `60px`,
-        left: `${(50 / 2) - (6 / 2)}px`,
-        backgroundColor: 'grey',
-      }
+    //* navigation line properties
+    this.elemList = ['Datos personales', 'Situación actual', 'Situación económica', 'Oferta', 'Identificación', 'Firma y documentación']
+    this.symbol = faHeartCircleCheck
+    this.size = 80
+    this.lineWidth = 10
+    this.lineHeight = 70
+    this.defaultValue = 3
+    this.defaultBGcolor = '#d2d2d2'
+    this.highlightedBGColor = 'orange'
+    this.defaultListColor = '#d2d2d2'
+    this.completeColor = '#fede56'
+    this.listStyle2 = {
+      fontFamily: 'Arial',
+      marginTop: `${this.size / 6}px`,
+      marginBottom: `${this.lineHeight + (this.size * 0.3)}px`,
+      fontSize: `${this.size * 0.6}px`,
+      color: this.defaultListColor,
+    }
+    this.circleStyle2 = {
+      width: `${this.size}px`,
+      height: `${this.size}px`,
+      fontSize: `${this.size * 0.6}px`,
+      backgroundColor: this.defaultBGcolor,
+    }
+    this.lineStyle2 = {
+      width: `${this.lineWidth}px`,
+      height: `${this.lineHeight}px`,
+      left: `${(this.size / 2) - (this.lineWidth / 2)}px`,
+      backgroundColor: this.defaultBGcolor,
     }
   }
 }

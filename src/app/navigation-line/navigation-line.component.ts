@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, ElementRef, ViewChildren, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChildren, ViewChild } from '@angular/core';
 import { faCheck, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { NavLine } from './nav-line';
 
 
 @Component({
@@ -33,19 +32,17 @@ export class NavigationLineComponent implements OnInit {
   @Input() completeColor: string;
 
   //style of the navigation line and list of elements
+  @Input() circleStyle = {
+    width: '',
+    height: '',
+    fontSize: '',
+    backgroundColor: '',
+  }
   @Input() lineStyle = {
-    circle: {
-      width: '',
-      height: '',
-      fontSize: '',
-      backgroundColor: '',
-    },
-    line: {
-      width: '',
-      height: '',
-      left: '',
-      backgroundColor: '',
-    } 
+    width: '',
+    height: '',
+    left: '',
+    backgroundColor: '',
   }
   @Input() listStyle = {}
 
@@ -80,19 +77,17 @@ export class NavigationLineComponent implements OnInit {
       fontSize: `${this.size * 0.6}px`,
       color: this.defaultListColor
     }
+    this.circleStyle = {
+      width: `${this.size}px`,
+      height: `${this.size}px`,
+      fontSize: `${this.size * 0.6}px`,
+      backgroundColor: this.defaultBGcolor,
+    }
     this.lineStyle = {
-      circle: {
-        width: `${this.size}px`,
-        height: `${this.size}px`,
-        fontSize: `${this.size * 0.6}px`,
-        backgroundColor: this.defaultBGcolor,
-      },
-      line: {
-        width: `${this.lineWidth}px`,
-        height: `${this.lineHeight}px`,
-        left: `${(this.size / 2) - (this.lineWidth / 2)}px`,
-        backgroundColor: this.defaultBGcolor,
-      }
+      width: `${this.lineWidth}px`,
+      height: `${this.lineHeight}px`,
+      left: `${(this.size / 2) - (this.lineWidth / 2)}px`,
+      backgroundColor: this.defaultBGcolor,
     }
   }
 

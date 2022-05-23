@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { generalStyle } from './circle-selector/general-style-interface';
-import { NavLine } from './navigation-line/nav-line';
 
 
 @Component({

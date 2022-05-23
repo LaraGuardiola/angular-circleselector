@@ -1,12 +1,12 @@
 <div class="navigation-line">
     <div class="line">
         <ng-container *appNavigationLine="elemList; let i = index">
-            <div class="nav-circle" [style]="lineStyle.circle" #circle>
+            <div class="nav-circle" [style]="circleStyle" #circle>
                 <div #tick>
                     <fa-icon [icon]="symbol"></fa-icon>
                 </div>
             </div>
-            <div #line class="nav-line" [style]="lineStyle.line" *ngIf="i !== elemList.length - 1">
+            <div #line class="nav-line" [style]="lineStyle" *ngIf="i !== elemList.length - 1">
             </div>
         </ng-container>
     </div>

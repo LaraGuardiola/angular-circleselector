@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef, ViewChildren, Renderer2, ViewChild } from '@angular/core';
 import { faCheck, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { NavLine } from './nav-line';
 
 
 @Component({
@@ -33,8 +34,18 @@ export class NavigationLineComponent implements OnInit {
 
   //style of the navigation line and list of elements
   @Input() lineStyle = {
-    circle: {},
-    line: {}
+    circle: {
+      width: '',
+      height: '',
+      fontSize: '',
+      backgroundColor: '',
+    },
+    line: {
+      width: '',
+      height: '',
+      left: '',
+      backgroundColor: '',
+    } 
   }
   @Input() listStyle = {}
 
@@ -68,7 +79,7 @@ export class NavigationLineComponent implements OnInit {
       marginBottom: `${this.lineHeight + (this.size * 0.3)}px`,
       fontSize: `${this.size * 0.6}px`,
       color: this.defaultListColor
-    },
+    }
     this.lineStyle = {
       circle: {
         width: `${this.size}px`,

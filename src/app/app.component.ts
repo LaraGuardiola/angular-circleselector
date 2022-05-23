@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { generalStyle } from './circle-selector/general-style-interface';
+import { NavLine } from './navigation-line/nav-line';
 
 
 @Component({
@@ -21,13 +22,16 @@ export class AppComponent {
   highlightedColor1 = 'red'
   defaultBackground1 = '#FFFFFF'
   defaultColor1 = '#000000'  
-  lineStyle = {};
+  lineStyle = {
+    circle: {},
+    line: {}
+  }
   constructor(){
     this.titleStyle = {
       fontFamily: 'Garamond',
       fontSize: '3em',
       color: 'orange'
-    },
+    }
     this.circleStyle = {
       backgroundColor: '#323232',
       color: '#FFFFFF ',
@@ -36,13 +40,13 @@ export class AppComponent {
       height: `100px`,
       fontSize: '48px',
       margin: '0.5em'
-    },
+    }
     this.titleStyle1 = {
       fontFamily: 'Comic Sans MS',
       fontSize: '2em',
       color: 'red',
       fontWeight: 'bold'
-    },
+    }
     this.circleStyle1 = {
       fontFamily: 'Comic Sans MS', 
       width: '80px',
@@ -51,18 +55,18 @@ export class AppComponent {
       margin: '1em',
       border: '1px solid red',
       fontWeight: 'bold'
-    },
+    }
     this.lineStyle = {
       circle: {
         width: `50px`,
         height: `50px`,
         fontSize: `${50 * 0.6}px`,
-        backgroundColor: 'grey',
+        backgroundColor: 'black',
       },
       line: {
-        width: `6px`,
+        width: `$6px`,
         height: `60px`,
-        left: `${(50 / 2) - (60 / 2)}px`,
+        left: `${(50 / 2) - (6 / 2)}px`,
         backgroundColor: 'grey',
       }
     }

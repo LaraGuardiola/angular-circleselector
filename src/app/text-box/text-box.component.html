@@ -1,10 +1,13 @@
 <div class="text-box">
     <input 
         class="input"  
-        [type]="inputType" 
+        [type]="inputType"
+        (focus)="onFocus()"
+        (focusout)="onFocusOut()"
         #input
     >
-    <span class="placeholder">{{placeholder}}</span>
+    <span #placeHODL class="placeholder">{{ placeholder }}</span>
+    <fa-icon *ngIf="" [icon]="symbol"></fa-icon>
     <p *ngIf="">sdafas</p>
 </div>
 

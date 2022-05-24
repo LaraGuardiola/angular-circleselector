@@ -5,7 +5,8 @@
 }
 
 .input {
-    height: 60px;
+    height: 80px;
+    width: 600px;
     background-color: 'yellow';
     outline: 0;
     border: 1px #88878b;
@@ -13,17 +14,11 @@
     text-indent: 20px;
 }
 
+/* top = (.input height/2) - (.placeholder font-size/2) */
+
 .placeholder {
     position: absolute;
-    left: 20px;
-    top: 20px;
-    font-size: 18px;
-    transition: 0.2s ease all
+    pointer-events: none;   
 }
 
-.input:focus ~ .placeholder {
-    font-size: 12px;
-    top: 10px;
-    font-weight: 600;
-}
 

@@ -8,6 +8,7 @@ import { NavigationLineComponent } from './navigation-line/navigation-line.compo
 import { NavigationLineDirective } from './navigation-line/navigation-line.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxComponent } from './text-box/text-box.component';
+import { ListBoxComponent } from './list-box/list-box.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TextBoxComponent } from './text-box/text-box.component';
     NavigationLineComponent,
     NavigationLineDirective,
     TextBoxComponent,
+    ListBoxComponent,
   ],
   imports: [
     BrowserModule,

@@ -167,10 +167,21 @@ export class TextBoxComponent implements OnInit {
     }
   }
 
-  displayIcon(): void {
+  displayWarnings(): void {
     this.input.nativeElement.value.length > 10 
       ? this.hasWarning = true
       : this.hasWarning = false
+
+    if(this.hasWarning){
+      this.msg = this.warningMessage
+      this.message.nativeElement.style.setProperty('color', this.warningMessageColor)
+      this.placeHODL.nativeElement.style.setProperty('color', this.warningMessageColor)
+    }else{
+      this.msg = this.defaultMessage
+      this.message.nativeElement.style.setProperty('color', this.defaultMessageColor)
+      this.placeHODL.nativeElement.style.setProperty('color', this.placeholderColor)
+    }
   }
+
 
 }

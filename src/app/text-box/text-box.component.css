@@ -5,11 +5,8 @@
 }
 
 .input {
-    height: 80px;
-    width: 600px;
-    background-color: 'yellow';
     outline: 0;
-    border: 1px #88878b;
+    border: 1px transparent;
     border-radius: 5px;
     text-indent: 20px;
 }
@@ -21,4 +18,7 @@
     pointer-events: none;   
 }
 
-
+.icon {
+    position: absolute;
+  
+}

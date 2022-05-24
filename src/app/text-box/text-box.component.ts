@@ -19,19 +19,25 @@ export class TextBoxComponent implements OnInit {
   @Input() placeholder: string
   @Input() placeholderFontSize: number
   @Input() animation: string
-  @Input() symbol: IconDefinition
   @Input() left: string
   @Input() top: string
   @Input() focusTop: string
   @Input() focusFontSize: number 
   @Input() fontWeight: number
-  @Input() inputStyle = {}
+  @Input() placeholderColor: string
+
+  //style of the icon
+  @Input() symbol: IconDefinition
+  @Input() iconTop: string;
+  @Input() iconRight: string;
+  @Input() iconSize: number;
+  @Input() iconColor: string
 
   constructor() {
     this.inputType = 'text';
-    this.height = 80
-    this.width = 200
-    this.fontSize = 18
+    this.height = 70
+    this.width = 600
+    this.fontSize = 14
     this.backgroundColor = '#e8ebf2'
     this.placeholder = 'Número de documento'
     this.placeholderFontSize = 18
@@ -42,17 +48,20 @@ export class TextBoxComponent implements OnInit {
     this.focusTop = `${ ( (this.height / 2) - (this.placeholderFontSize / 2) ) / 3 }px`
     this.focusFontSize = 12
     this.fontWeight = 600
-    this.inputStyle = {
-      height: `${this.height}px`,
-      width: `${this.width}px`,
-      fontSize: '16px',
-    }
+    this.placeholderColor = '#828285'
+    this.iconSize = 28
+    this.iconTop = `${ (this.height / 2) - (this.iconSize / 2) }px`
+    this.iconRight = '20px'
+    this.iconColor = '#f03136'
    }
 
    @ViewChild('input') input: ElementRef | any
    @ViewChild('placeHODL') placeHODL: ElementRef | any
+   @ViewChild('icon') icon: ElementRef | any
 
   ngOnInit(): void {}
+
+   //*DEFAULT STATE
 
   ngAfterViewInit(): void {
     this.setDefaultState()
@@ -62,20 +71,31 @@ export class TextBoxComponent implements OnInit {
     this.setInputDefaultState()
     this.setPlaceholderAnimation(this.animation)
     this.setPlaceholderStyle()
+    this.setIconDefaultState()
   }
 
+  //setting up input style
   setInputDefaultState(): void {
-    this.setBackgroundColor(this.backgroundColor)
-    this.setBorder()
+    this.setInputColors()
+    this.setInputBorder()
+    this.setInputSize()
   }
 
-  setBackgroundColor(color: string): void {
-    this.input.nativeElement.style.backgroundColor = color;
+  setInputColors(): void {
+    this.input.nativeElement.style.backgroundColor = this.backgroundColor;
   }
 
-  setBorder(): void {
+  setInputBorder(): void {
     this.input.nativeElement.style.borderBottom = '2px solid #88878b'
   }
+
+  setInputSize(): void {
+    this.input.nativeElement.style.setProperty('height', `${this.height}px`);
+    this.input.nativeElement.style.setProperty('width', `${this.width}px`);
+    this.input.nativeElement.style.setProperty('font-size', `${this.fontSize}px`);
+  }
+
+  //setting up placeholder style
 
   setPlaceholderAnimation(animation: string): void {
     this.placeHODL.nativeElement.style.setProperty('transition', animation);
@@ -85,6 +105,17 @@ export class TextBoxComponent implements OnInit {
     this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`);
     this.placeHODL.nativeElement.style.setProperty('left', this.left);
     this.placeHODL.nativeElement.style.setProperty('top', this.top);
+    this.placeHODL.nativeElement.style.setProperty('color', this.placeholderColor);
+  }
+
+  //setting up icon style
+
+  setIconDefaultState(): void {
+    console.log(this.icon)
+    this.icon.nativeElement.style.setProperty('top', this.iconTop)
+    this.icon.nativeElement.style.setProperty('right', this.iconRight)
+    this.icon.nativeElement.style.setProperty('font-size', `${this.iconSize}px`)
+    this.icon.nativeElement.style.setProperty('color', this.iconColor)
   }
 
   //* Events

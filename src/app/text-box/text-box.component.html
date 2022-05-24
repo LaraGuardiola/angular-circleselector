@@ -2,12 +2,13 @@
     <input 
         class="input"  
         [type]="inputType"
+        (input)="displayIcon()"
         (focus)="onFocus()"
         (focusout)="onFocusOut()"
         #input
     >
     <span #placeHODL class="placeholder">{{ placeholder }}</span>
-    <div class="icon" #icon><fa-icon [icon]="symbol"></fa-icon></div>
-    <p *ngIf="">sdafas</p>
+    <div class="icon" #icon><fa-icon *ngIf="hasWarning" [icon]="symbol"></fa-icon></div>
+    <div class="info"></div>
 </div>
 

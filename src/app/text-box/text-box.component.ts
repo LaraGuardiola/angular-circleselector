@@ -32,6 +32,7 @@ export class TextBoxComponent implements OnInit {
   @Input() iconRight: string;
   @Input() iconSize: number;
   @Input() iconColor: string
+  @Input() hasWarning: boolean
 
   constructor() {
     this.inputType = 'text';
@@ -53,6 +54,7 @@ export class TextBoxComponent implements OnInit {
     this.iconTop = `${ (this.height / 2) - (this.iconSize / 2) }px`
     this.iconRight = '20px'
     this.iconColor = '#f03136'
+    this.hasWarning = false
    }
 
    @ViewChild('input') input: ElementRef | any
@@ -69,7 +71,7 @@ export class TextBoxComponent implements OnInit {
 
   setDefaultState(): void {
     this.setInputDefaultState()
-    this.setPlaceholderAnimation(this.animation)
+    this.setPlaceholderAnimation()
     this.setPlaceholderStyle()
     this.setIconDefaultState()
   }
@@ -97,8 +99,8 @@ export class TextBoxComponent implements OnInit {
 
   //setting up placeholder style
 
-  setPlaceholderAnimation(animation: string): void {
-    this.placeHODL.nativeElement.style.setProperty('transition', animation);
+  setPlaceholderAnimation(): void {
+    this.placeHODL.nativeElement.style.setProperty('transition', this.animation);
   }
 
   setPlaceholderStyle(): void {
@@ -111,24 +113,22 @@ export class TextBoxComponent implements OnInit {
   //setting up icon style
 
   setIconDefaultState(): void {
-    console.log(this.icon)
     this.icon.nativeElement.style.setProperty('top', this.iconTop)
     this.icon.nativeElement.style.setProperty('right', this.iconRight)
     this.icon.nativeElement.style.setProperty('font-size', `${this.iconSize}px`)
     this.icon.nativeElement.style.setProperty('color', this.iconColor)
   }
 
+
   //* Events
 
   onFocus(): void {
-    console.log('hola')
     this.placeHODL.nativeElement.style.setProperty('top', this.focusTop);
     this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`);
     this.placeHODL.nativeElement.style.setProperty('transition', this.animation);
   }
 
   onFocusOut(): void {
-    console.log('adios')
     if(this.input.nativeElement.value.length > 0){
       this.placeHODL.nativeElement.style.setProperty('top', this.focusTop);
       this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`);
@@ -137,6 +137,12 @@ export class TextBoxComponent implements OnInit {
       this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`);
       this.placeHODL.nativeElement.style.setProperty('top', this.top);
     }
+  }
+
+  displayIcon(): void {
+    this.input.nativeElement.value.length > 10 
+      ? this.hasWarning = true
+      : this.hasWarning = false
   }
 
 }

@@ -1,22 +1,29 @@
 .text-box {
+    position: relative;
     margin-top: 3em;
     margin-left: 6em;
 }
 
 .input {
-    margin: 50px;
-    width: 400px;
     height: 60px;
     background-color: 'yellow';
     outline: 0;
-    border: none;
-    padding-left: 2em;
-
+    border: 1px #88878b;
+    border-radius: 5px;
+    text-indent: 20px;
 }
 
-.input::placeholder {
+.placeholder {
     position: absolute;
-    transform: translate(2%, 0%);
-    color: #88878b;
-    font-weight: 800;
+    left: 20px;
+    top: 20px;
+    font-size: 18px;
+    transition: 0.2s ease all
 }
+
+.input:focus ~ .placeholder {
+    font-size: 12px;
+    top: 10px;
+    font-weight: 600;
+}
+

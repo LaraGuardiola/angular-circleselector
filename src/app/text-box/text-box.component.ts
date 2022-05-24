@@ -19,7 +19,7 @@ export class TextBoxComponent implements OnInit {
     this.inputType = 'text';
     this.height = 30
     this.width = 200
-    this.placeholder = 'Número de documento'
+    this.placeholder = 'Número'
     this.backgroundColor = '#e8ebf2'
     this.inputStyle = {
       height: `${this.height}px`,

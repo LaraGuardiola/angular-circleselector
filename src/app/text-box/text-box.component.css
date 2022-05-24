@@ -1,0 +1,22 @@
+.text-box {
+    margin-top: 3em;
+    margin-left: 6em;
+}
+
+.input {
+    margin: 50px;
+    width: 400px;
+    height: 60px;
+    background-color: 'yellow';
+    outline: 0;
+    border: none;
+    padding-left: 2em;
+
+}
+
+.input::placeholder {
+    position: absolute;
+    transform: translate(2%, 0%);
+    color: #88878b;
+    font-weight: 800;
+}

@@ -32,18 +32,8 @@ export class NavigationLineComponent implements OnInit {
   @Input() completeColor: string;
 
   //style of the navigation line and list of elements
-  @Input() circleStyle = {
-    width: '',
-    height: '',
-    fontSize: '',
-    backgroundColor: '',
-  }
-  @Input() lineStyle = {
-    width: '',
-    height: '',
-    left: '',
-    backgroundColor: '',
-  }
+  @Input() circleStyle = {}
+  @Input() lineStyle = {}
   @Input() listStyle = {}
 
   //*LINE REFERENCES

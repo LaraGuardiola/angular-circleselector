@@ -104,16 +104,21 @@ export class AppComponent {
   
   @ViewChild('anchor', { read: ViewContainerRef }) anchor: ViewContainerRef | any;
   async loadComponent($event: Event, component: string) {
+
     const { CircleSelectorComponent } = await import('./circle-selector/circle-selector.component')
     const { NavigationLineComponent } = await import('./navigation-line/navigation-line.component')
-    let elem = ($event.target as HTMLElement);
+    const { TextBoxComponent } = await import('./text-box/text-box.component')
 
+    let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
       if(component === 'circleselector'){
         this.anchor.createComponent(CircleSelectorComponent)
       }
       if(component === 'navigationline'){
         this.anchor.createComponent(NavigationLineComponent)
+      }
+      if(component === 'textbox'){
+        this.anchor.createComponent(TextBoxComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -123,6 +128,10 @@ export class AppComponent {
       if(component === 'navigationline'){
         this.anchor.clear()
         this.anchor.createComponent(NavigationLineComponent)
+      }
+      if(component === 'textbox'){
+        this.anchor.clear()
+        this.anchor.createComponent(TextBoxComponent)
       }
     }
     this.setClickedEffect(elem)

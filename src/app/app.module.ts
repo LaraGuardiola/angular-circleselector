@@ -7,6 +7,7 @@ import { CirclesDirective } from './circle-selector/circles.directive';
 import { NavigationLineComponent } from './navigation-line/navigation-line.component';
 import { NavigationLineDirective } from './navigation-line/navigation-line.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TextBoxComponent } from './text-box/text-box.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CirclesDirective,
     NavigationLineComponent,
     NavigationLineDirective,
+    TextBoxComponent,
   ],
   imports: [
     BrowserModule,

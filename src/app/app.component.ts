@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef} from '@angular/core';
 import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { generalStyle } from './circle-selector/general-style-interface';
 
@@ -25,25 +25,9 @@ export class AppComponent {
   defaultColor1 = '#000000'
 
   //* navigation line properties  
-  circleStyle2 = {
-    width: '',
-    height: '',
-    fontSize: '',
-    backgroundColor: '',
-  }
-  lineStyle2 = {
-    width: '',
-    height: '',
-    left: '',
-    backgroundColor: '',
-  }
-  listStyle2 = {
-    fontFamily: '',
-    marginTop: ``,
-    marginBottom: ``,
-    fontSize: ``,
-    color: '',
-  }
+  circleStyle2 = {}
+  lineStyle2 = {}
+  listStyle2 = {}
   elemList: string[];
   symbol: any;
   size: number;
@@ -115,6 +99,30 @@ export class AppComponent {
       height: `${this.lineHeight}px`,
       left: `${(this.size / 2) - (this.lineWidth / 2)}px`,
       backgroundColor: this.defaultBGcolor,
+    }
+  }
+  
+  @ViewChild('anchor', { read: ViewContainerRef }) anchor: ViewContainerRef | any;
+  async loadComponent(component: string) {
+    const { CircleSelectorComponent } = await import('./circle-selector/circle-selector.component')
+    const { NavigationLineComponent } = await import('./navigation-line/navigation-line.component')
+
+    if(this.anchor.length === 0){
+      if(component === 'circleselector'){
+        this.anchor.createComponent(CircleSelectorComponent)
+      }
+      if(component === 'navigationline'){
+        this.anchor.createComponent(NavigationLineComponent)
+      }
+    }else{
+      if(component === 'circleselector'){
+        this.anchor.clear()
+        this.anchor.createComponent(CircleSelectorComponent)
+      }
+      if(component === 'navigationline'){
+        this.anchor.clear()
+        this.anchor.createComponent(NavigationLineComponent)
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import { NavigationLineComponent } from './navigation-line/navigation-line.compo
 import { NavigationLineDirective } from './navigation-line/navigation-line.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @NgModule({
   declarations: [
     AppComponent,

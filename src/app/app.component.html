@@ -1,4 +1,33 @@
-<app-circle-selector></app-circle-selector>
+<div class="main">
+    <div class="sidemenu">
+        <aside class="menu">
+            <p class="menu-label">
+              Components
+            </p>
+            <ul class="menu-list">
+              <li><a (click)="loadComponent('circleselector')">Circle selector</a></li>
+              <li><a (click)="loadComponent('navigationline')">Navigation line</a></li>
+            </ul>
+        </aside>
+    </div>
+    <div>
+        <ng-container class="mainspace" #anchor></ng-container>
+    </div>
+</div>
+
+
+
+<!--<div class="ui container">
+    <div class="ui secondary pointing menu">
+        <a (click)="loadComponent('circleselector')" class="item">Circle selector</a>
+        <a (click)="loadComponent('navigationline')" class="item">Navigation line</a>
+    </div>
+    <div class="ui segment">
+        <ng-container #anchor></ng-container>
+    </div>
+</div>-->
+
+<!--<app-circle-selector></app-circle-selector>
 <app-circle-selector
     [title]="title" 
     [numberList]="[1,2,3,6,12,24]" 
@@ -10,18 +39,6 @@
     [circleStyle]="circleStyle"
     [titleStyle]="titleStyle"
 ></app-circle-selector>
-<app-circle-selector
-    [title]="'Probando el titulo'" 
-    [numberList]="['A','B','C','D']" 
-    [highlightedBackground]="highlightedBackground1"
-    [highlightedColor]="highlightedColor1"
-    [defaultBackground]="defaultBackground1"
-    [defaultColor]="defaultColor1"
-    [defaultValue]="'C'" 
-    [circleStyle]="circleStyle1"
-    [titleStyle]="titleStyle1"
->
-</app-circle-selector>
 
 <hr>
 
@@ -43,4 +60,4 @@
         [listStyle]="listStyle2"
     >
     </app-navigation-line>
-</div>
+</div> -->

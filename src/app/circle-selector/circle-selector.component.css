@@ -1,3 +1,8 @@
+.circle-selector {
+    margin-left: 6em;
+    margin-top: 3em;
+}
+
 .circle-selector-container {
     display: flex;
 }

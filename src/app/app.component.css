@@ -9,20 +9,34 @@
 }
 .main{
     display: flex;
-    font-family: Garamond;
+    font-family: Arial;
     font-weight: bold;
 }
+
+.mainspace{
+    position: absolute;
+    margin-top: 200px;
+}
+
 .sidemenu{
     width: fit-content;
     margin: 20px;
 }
 
 li {
-    margin: 20px;
+    margin: 1em;
+    padding: 0.5em;
+    list-style: none;
+    cursor: pointer;
+}
+
+li > a {
+    width: fit-content;
+    height: fit-content;
 }
 
 .menu-list > li:hover{
-    background-color: #00D1B2;
-    color: white;
+    opacity: 0.7;
+    color: black;
     border-radius: 2px;
 }

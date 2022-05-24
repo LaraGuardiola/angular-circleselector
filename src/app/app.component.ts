@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef} from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef} from '@angular/core';
 import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { generalStyle } from './circle-selector/general-style-interface';
 
@@ -103,9 +103,10 @@ export class AppComponent {
   }
   
   @ViewChild('anchor', { read: ViewContainerRef }) anchor: ViewContainerRef | any;
-  async loadComponent(component: string) {
+  async loadComponent($event: Event, component: string) {
     const { CircleSelectorComponent } = await import('./circle-selector/circle-selector.component')
     const { NavigationLineComponent } = await import('./navigation-line/navigation-line.component')
+    let elem = ($event.target as HTMLElement);
 
     if(this.anchor.length === 0){
       if(component === 'circleselector'){
@@ -124,5 +125,20 @@ export class AppComponent {
         this.anchor.createComponent(NavigationLineComponent)
       }
     }
+    this.setClickedEffect(elem)
+  }
+
+  setClickedEffect(elem: HTMLElement) {
+    if(elem.nodeName === 'A'){
+      elem = elem.parentNode as HTMLElement
+    }
+    let ulElem = elem.parentNode
+    let ul = Array.from(ulElem!.childNodes)
+    for(let li of ul){
+      (li as HTMLElement).style.setProperty('background-color', '#ffffff');
+      (li as HTMLElement).style.setProperty('color', '#000000')
+    }
+    elem.style.setProperty('background-color','#00D1B2')
+    elem.style.setProperty('color','#ffffff')
   }
 }

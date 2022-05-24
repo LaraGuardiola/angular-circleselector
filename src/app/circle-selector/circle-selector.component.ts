@@ -65,31 +65,4 @@ export class CircleSelectorComponent implements OnInit, AfterViewInit  {
     this.clickService.onClick($event, this.numberList, this.circle, this.highlightedBackground, this.highlightedColor, this.defaultBackground, this.defaultColor)
   }
 
-  //*WITHOUT SERVICE LOGIC
-
-  //this.clickedColors(this.highlightedBackground, this.highlightedColor) - should be inside ngAfterViewInit()
-
-  /*clickedColors(backgroundColor: string, color: string): void {
-    let circleHighlighted = this.circle._results[this.numberList.indexOf(this.defaultValue)]
-    this.setClickedEffect(circleHighlighted, backgroundColor, color)
-  }
-  
-  //marks circles as clicked, and unclicks the previously clicked circle
-  onClick($event: Event): void{
-    let elem = ($event.target as HTMLElement)
-    let index = this.numberList.map( num => num.toString()).indexOf(elem.innerText)
-    this.circle._results.forEach((elem: ElementRef, i: number) => {
-      if(index === i){
-        this.setClickedEffect(elem, this.highlightedBackground, this.highlightedColor)
-        return
-      }
-      this.setClickedEffect(elem, this.defaultBackground, this.defaultColor)
-    })
-  }
-
-  setClickedEffect(elem: ElementRef, backgroundColor: string, color: string){
-    elem.nativeElement.style.setProperty('background-color',backgroundColor)
-    elem.nativeElement.style.setProperty('color',color)
-  }*/
-
 }

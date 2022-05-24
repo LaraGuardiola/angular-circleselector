@@ -12,7 +12,7 @@ export class TextBoxComponent implements OnInit {
   @Input() inputType: string
   @Input() height: number
   @Input() width: number
-  @Input() fontSize: number;
+  @Input() fontSize: number
   @Input() backgroundColor: string
 
   //style of the placeholder
@@ -28,14 +28,23 @@ export class TextBoxComponent implements OnInit {
 
   //style of the icon
   @Input() symbol: IconDefinition
-  @Input() iconTop: string;
-  @Input() iconRight: string;
-  @Input() iconSize: number;
+  @Input() iconTop: string
+  @Input() iconRight: string
+  @Input() iconSize: number
   @Input() iconColor: string
   @Input() hasWarning: boolean
 
+  //style of the validation message
+  @Input() defaultMessage: string
+  @Input() warningMessage: string
+  @Input() defaultMessageColor: string;
+  @Input() warningMessageColor: string;
+  @Input() msg: string
+  @Input() messageFontFamily: string
+  @Input() messageFontSize: string;
+
   constructor() {
-    this.inputType = 'text';
+    this.inputType = 'password'
     this.height = 70
     this.width = 600
     this.fontSize = 14
@@ -55,11 +64,19 @@ export class TextBoxComponent implements OnInit {
     this.iconRight = '20px'
     this.iconColor = '#f03136'
     this.hasWarning = false
+    this.defaultMessage = 'Documento válido: NIF/NIE'
+    this.warningMessage = '¿¡Qué demonios haces?!'
+    this.msg = this.defaultMessage
+    this.defaultMessageColor = '#d0d2d1'
+    this.warningMessageColor = '#f03136'
+    this.messageFontFamily = 'Arial'
+    this.messageFontSize = '12px'
    }
 
    @ViewChild('input') input: ElementRef | any
    @ViewChild('placeHODL') placeHODL: ElementRef | any
    @ViewChild('icon') icon: ElementRef | any
+   @ViewChild('message') message: ElementRef | any
 
   ngOnInit(): void {}
 
@@ -71,9 +88,9 @@ export class TextBoxComponent implements OnInit {
 
   setDefaultState(): void {
     this.setInputDefaultState()
-    this.setPlaceholderAnimation()
-    this.setPlaceholderStyle()
+    this.setPlaceholderDefaultState()
     this.setIconDefaultState()
+    this.setMessageDefaultState()
   }
 
   //setting up input style
@@ -92,22 +109,25 @@ export class TextBoxComponent implements OnInit {
   }
 
   setInputSize(): void {
-    this.input.nativeElement.style.setProperty('height', `${this.height}px`);
-    this.input.nativeElement.style.setProperty('width', `${this.width}px`);
-    this.input.nativeElement.style.setProperty('font-size', `${this.fontSize}px`);
+    this.input.nativeElement.style.setProperty('height', `${this.height}px`)
+    this.input.nativeElement.style.setProperty('width', `${this.width}px`)
+    this.input.nativeElement.style.setProperty('font-size', `${this.fontSize}px`)
   }
 
   //setting up placeholder style
-
+  setPlaceholderDefaultState(): void {
+    this.setPlaceholderAnimation()
+    this.setPlaceholderStyle()
+  }
   setPlaceholderAnimation(): void {
-    this.placeHODL.nativeElement.style.setProperty('transition', this.animation);
+    this.placeHODL.nativeElement.style.setProperty('transition', this.animation)
   }
 
   setPlaceholderStyle(): void {
-    this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`);
-    this.placeHODL.nativeElement.style.setProperty('left', this.left);
-    this.placeHODL.nativeElement.style.setProperty('top', this.top);
-    this.placeHODL.nativeElement.style.setProperty('color', this.placeholderColor);
+    this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`)
+    this.placeHODL.nativeElement.style.setProperty('left', this.left)
+    this.placeHODL.nativeElement.style.setProperty('top', this.top)
+    this.placeHODL.nativeElement.style.setProperty('color', this.placeholderColor)
   }
 
   //setting up icon style
@@ -119,23 +139,31 @@ export class TextBoxComponent implements OnInit {
     this.icon.nativeElement.style.setProperty('color', this.iconColor)
   }
 
+  //setting up validation message style
+
+  setMessageDefaultState(): void {
+    this.message.nativeElement.style.setProperty('font-family', this.messageFontFamily)
+    this.message.nativeElement.style.setProperty('font-size', this.messageFontSize)
+    this.message.nativeElement.style.setProperty('color', this.defaultMessageColor)
+  }
+
 
   //* Events
 
   onFocus(): void {
-    this.placeHODL.nativeElement.style.setProperty('top', this.focusTop);
-    this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`);
-    this.placeHODL.nativeElement.style.setProperty('transition', this.animation);
+    this.placeHODL.nativeElement.style.setProperty('top', this.focusTop)
+    this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`)
+    this.placeHODL.nativeElement.style.setProperty('transition', this.animation)
   }
 
   onFocusOut(): void {
     if(this.input.nativeElement.value.length > 0){
-      this.placeHODL.nativeElement.style.setProperty('top', this.focusTop);
-      this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`);
-      this.placeHODL.nativeElement.style.setProperty('font-weight', `${this.fontWeight}`);
+      this.placeHODL.nativeElement.style.setProperty('top', this.focusTop)
+      this.placeHODL.nativeElement.style.setProperty('font-size', `${this.focusFontSize}px`)
+      this.placeHODL.nativeElement.style.setProperty('font-weight', `${this.fontWeight}`)
     }else{
-      this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`);
-      this.placeHODL.nativeElement.style.setProperty('top', this.top);
+      this.placeHODL.nativeElement.style.setProperty('font-size', `${this.placeholderFontSize}px`)
+      this.placeHODL.nativeElement.style.setProperty('top', this.top)
     }
   }
 

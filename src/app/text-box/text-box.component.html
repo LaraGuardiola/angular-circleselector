@@ -9,6 +9,6 @@
     >
     <span #placeHODL class="placeholder">{{ placeholder }}</span>
     <div class="icon" #icon><fa-icon *ngIf="hasWarning" [icon]="symbol"></fa-icon></div>
-    <div class="info"></div>
+    <div class="info" #message>{{ msg }}</div>
 </div>
 

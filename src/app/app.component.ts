@@ -111,6 +111,7 @@ export class AppComponent {
     const { ListBoxComponent } = await import('./list-box/list-box.component')
     const { IconButtonComponent } = await import('./icon-button/icon-button.component')
     const { ButtonatorComponent } = await import('./buttonator/buttonator.component')
+    const { RadioButtonComponent } = await import('./radio-button/radio-button.component')
 
     let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
@@ -131,6 +132,9 @@ export class AppComponent {
       }
       if(component === 'buttonator'){
         this.anchor.createComponent(ButtonatorComponent)
+      }
+      if(component === 'radiobutton'){
+        this.anchor.createComponent(RadioButtonComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -156,6 +160,10 @@ export class AppComponent {
       if(component === 'buttonator'){
         this.anchor.clear()
         this.anchor.createComponent(ButtonatorComponent)
+      }
+      if(component === 'radiobutton'){
+        this.anchor.clear()
+        this.anchor.createComponent(RadioButtonComponent)
       }
     }
     this.setClickedEffect(elem)

@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .nav-lists {
     display: flex;
 }
@@ -39,4 +40,9 @@ li > a {
     opacity: 0.7;
     color: black;
     border-radius: 2px;
+}
+
+.mainwrap {
+    position: relative;
+    left: 600px;
 }

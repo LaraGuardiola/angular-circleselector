@@ -5,17 +5,11 @@
 
 .icon-button {
     display: flex;
-    border-radius: 5px;
-    padding: 0.8em;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    width: 160px;
-    height: 80px;
-    background-color: lightgreen;
 }
 
 .icon-button:hover {
     opacity: 0.7;
 }
-

@@ -5,7 +5,6 @@
 
 .icon-button {
     display: flex;
-    border: 2px solid grey;
     border-radius: 5px;
     padding: 0.8em;
     justify-content: space-between;
@@ -18,9 +17,5 @@
 
 .icon-button:hover {
     opacity: 0.7;
-}
-
-.symbol {
-    font-size: 24px;
 }
 

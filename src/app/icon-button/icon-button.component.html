@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <div (click)="onClick($event)" class="icon-button">
-        <div class="symbol"><fa-icon [icon]="symbol"></fa-icon></div>
+    <div #button (click)="onClick($event)" class="icon-button">
+        <div #icon class="symbol"><fa-icon [icon]="symbol"></fa-icon></div>
         <div class="word">{{ buttonText }}</div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-box',
@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListBoxComponent implements OnInit {
 
-  constructor() { }
+  @Input() list: string[]
+
+  constructor() {
+    this.list = [
+      'Autónomo',
+      'Asalariado',
+      'Funcionario',
+      'Pensionista'
+    ]
+   }
 
   ngOnInit(): void {
   }

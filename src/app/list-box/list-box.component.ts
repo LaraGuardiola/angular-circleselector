@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-list-box',
@@ -17,17 +17,29 @@ export class ListBoxComponent implements OnInit {
 
   constructor() {
     this.title = 'Situación laboral'
-    this.selectWidth = 300
-    this.selectHeight = 70
+    this.selectWidth = 500
+    this.selectHeight = 500
     this.list = [
       'Autónomo',
       'Asalariado',
       'Funcionario',
       'Pensionista'
     ]
-   }
+  }
+
+  @ViewChild('select') select: ElementRef | any
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.setSelectDefaultState()
+  }
+
+  //setting up select style
+  setSelectDefaultState(){
+    this.select.nativeElement.style.setProperty('width', this.selectWidth + 'px')
+    this.select.nativeElement.style.setProperty('height', this.selectHeight + 'px')
   }
 
 }

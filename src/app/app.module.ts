@@ -9,6 +9,7 @@ import { NavigationLineDirective } from './navigation-line/navigation-line.direc
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxComponent } from './text-box/text-box.component';
 import { ListBoxComponent } from './list-box/list-box.component';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ListBoxComponent } from './list-box/list-box.component';
     NavigationLineDirective,
     TextBoxComponent,
     ListBoxComponent,
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,

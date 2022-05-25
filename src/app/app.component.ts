@@ -109,6 +109,7 @@ export class AppComponent {
     const { NavigationLineComponent } = await import('./navigation-line/navigation-line.component')
     const { TextBoxComponent } = await import('./text-box/text-box.component')
     const { ListBoxComponent } = await import('./list-box/list-box.component')
+    const { IconButtonComponent } = await import('./icon-button/icon-button.component')
 
     let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
@@ -123,6 +124,9 @@ export class AppComponent {
       }
       if(component === 'listbox'){
         this.anchor.createComponent(ListBoxComponent)
+      }
+      if(component === 'iconbutton'){
+        this.anchor.createComponent(IconButtonComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -140,6 +144,10 @@ export class AppComponent {
       if(component === 'listbox'){
         this.anchor.clear()
         this.anchor.createComponent(ListBoxComponent)
+      }
+      if(component === 'iconbutton'){
+        this.anchor.clear()
+        this.anchor.createComponent(IconButtonComponent)
       }
     }
     this.setClickedEffect(elem)

@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxComponent } from './text-box/text-box.component';
 import { ListBoxComponent } from './list-box/list-box.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
+import { ButtonatorComponent } from './buttonator/buttonator.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
     TextBoxComponent,
     ListBoxComponent,
     IconButtonComponent,
+    ButtonatorComponent,
   ],
   imports: [
     BrowserModule,

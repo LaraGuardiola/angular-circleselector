@@ -1,0 +1,13 @@
+.buttonator {
+    margin-top: 3em;
+    margin-left: 6em;
+    border: none;
+}
+
+.buttonator:hover {
+    opacity: 0.7;
+}
+
+
+
+/* margin for demo purposes, remove if it's going to be used elsewhere*/

@@ -110,6 +110,7 @@ export class AppComponent {
     const { TextBoxComponent } = await import('./text-box/text-box.component')
     const { ListBoxComponent } = await import('./list-box/list-box.component')
     const { IconButtonComponent } = await import('./icon-button/icon-button.component')
+    const { ButtonatorComponent } = await import('./buttonator/buttonator.component')
 
     let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
@@ -127,6 +128,9 @@ export class AppComponent {
       }
       if(component === 'iconbutton'){
         this.anchor.createComponent(IconButtonComponent)
+      }
+      if(component === 'buttonator'){
+        this.anchor.createComponent(ButtonatorComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -148,6 +152,10 @@ export class AppComponent {
       if(component === 'iconbutton'){
         this.anchor.clear()
         this.anchor.createComponent(IconButtonComponent)
+      }
+      if(component === 'buttonator'){
+        this.anchor.clear()
+        this.anchor.createComponent(ButtonatorComponent)
       }
     }
     this.setClickedEffect(elem)

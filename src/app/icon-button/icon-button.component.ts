@@ -16,6 +16,7 @@ export class IconButtonComponent implements OnInit {
   //style of the text
   @Input() buttonText: string
   @Input() buttonColor: string
+  @Input() buttonFontFamily: string
 
   //style of the fake button
   @Input() hasBorder: boolean
@@ -33,6 +34,7 @@ export class IconButtonComponent implements OnInit {
     this.symbolColor = '#18acb5'
     this.buttonText = 'VER DETALLES'
     this.buttonColor = '#18acb5'
+    this.buttonFontFamily = 'Arial'
     this.borderColor = '#18acb5'
     this.borderSize = '2px'
     this.hasBorder = true
@@ -68,6 +70,7 @@ export class IconButtonComponent implements OnInit {
 
   setTextDefaultState(): void {
     this.text.nativeElement.style.setProperty('color', this.buttonColor)
+    this.text.nativeElement.style.setProperty('font-family', this.buttonFontFamily)
   }
 
   setButtonDefaultState(): void {

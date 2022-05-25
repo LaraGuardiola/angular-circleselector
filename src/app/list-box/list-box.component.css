@@ -10,6 +10,7 @@
     outline: 0;
     text-indent: 20px;
     border: 1px solid #e8ebf2;
+    border-radius: 5px;
     margin-top: 1em;
     appearance: none;   
 }
@@ -32,10 +33,6 @@
 
 .title {
     width: max-content;
-    color: #88878b;
     position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 12px;
     z-index: 1;
 }

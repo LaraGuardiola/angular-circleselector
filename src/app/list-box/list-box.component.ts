@@ -18,12 +18,15 @@ export class ListBoxComponent implements OnInit {
   @Input() fontWeight: string
   @Input() borderBottom: string
 
-
   //style of the title
-  @Input() title: string;
+  @Input() title: string
+  @Input() titleColor: string
+  @Input() titleTop: string
+  @Input() titleLeft: string
+  @Input() titleFontSize: number
+
 
   constructor() {
-    this.title = 'Situación laboral'
     this.selectWidth = 300
     this.selectHeight = 70
     this.selectBackgroundColor = '#e8ebf2'
@@ -32,6 +35,11 @@ export class ListBoxComponent implements OnInit {
     this.fontSize = 16
     this.fontWeight = 'bold'
     this.borderBottom = '2px solid #88878b'
+    this.title = 'Situación laboral'
+    this.titleColor = '#88878b'
+    this.titleFontSize = 12
+    this.titleTop = `${ ((this.selectHeight / 2) - (this.titleFontSize / 2)) / 3}px`
+    this.titleLeft = '20px'
     this.list = [
       'Autónomo',
       'Asalariado',
@@ -41,12 +49,18 @@ export class ListBoxComponent implements OnInit {
   }
 
   @ViewChild('select') select: ElementRef | any
+  @ViewChild('ptitle') ptitle: ElementRef | any
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
+    this.setDefaultState()
+  }
+
+  setDefaultState(): void {
     this.setSelectDefaultState()
+    this.setTitleDefaultState()
   }
 
   //setting up select style
@@ -60,5 +74,13 @@ export class ListBoxComponent implements OnInit {
     this.select.nativeElement.style.setProperty('font-weight', this.fontWeight)
     this.select.nativeElement.style.setProperty('border-bottom', this.borderBottom)
   }
+
+  setTitleDefaultState(){
+    this.ptitle.nativeElement.style.setProperty('color', this.titleColor)
+    this.ptitle.nativeElement.style.setProperty('font-size', this.titleFontSize + 'px')
+    this.ptitle.nativeElement.style.setProperty('top', this.titleTop)
+    this.ptitle.nativeElement.style.setProperty('left', this.titleLeft)
+  }
+
 
 }

@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div class="icon-button">
+    <div (click)="onClick($event)" class="icon-button">
         <div class="symbol"><fa-icon [icon]="symbol"></fa-icon></div>
         <div class="word">{{ buttonText }}</div>
     </div>

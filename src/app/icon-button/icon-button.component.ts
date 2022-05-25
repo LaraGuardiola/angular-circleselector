@@ -22,4 +22,9 @@ export class IconButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(event: Event): void {
+    let button = (event.target as HTMLElement)
+    console.log(button)
+  }
+
 }

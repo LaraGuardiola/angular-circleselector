@@ -12,7 +12,8 @@
     align-items: center;
     cursor: pointer;
     width: 160px;
-    background-color: red;
+    height: 80px;
+    background-color: lightgreen;
 }
 
 .icon-button:hover {

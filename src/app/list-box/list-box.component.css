@@ -9,17 +9,9 @@
     top: 0;
     outline: 0;
     text-indent: 20px;
-    justify-content: center;
-    background-color: #e8ebf2;
     border: 1px solid #e8ebf2;
-    border-radius: 5px;
-    font-family: 'Arial';
-    font-size: 16px;
-    font-weight: bold;
-    color: #88878b;
-    border-bottom: 2px solid #88878b;
     margin-top: 1em;
-    appearance: none;
+    appearance: none;   
 }
 
 /* top = .list height/2 + .list fontSize - .list borderBottom */

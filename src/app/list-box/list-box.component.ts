@@ -7,9 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListBoxComponent implements OnInit {
 
+  //style of the select
   @Input() list: string[]
+  @Input() selectWidth: number;
+  @Input() selectHeight: number;
+
+  //style of the title
+  @Input() title: string;
 
   constructor() {
+    this.title = 'Situación laboral'
+    this.selectWidth = 300
+    this.selectHeight = 70
     this.list = [
       'Autónomo',
       'Asalariado',

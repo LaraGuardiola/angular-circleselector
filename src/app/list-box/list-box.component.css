@@ -1,29 +1,50 @@
 .list-box {
+    position: relative;
     margin-top: 3em;
     margin-left: 6em;
 }
 
 .list {
+    position: absolute;
+    top: 0;
     outline: 0;
     width: 300px;
-    height: 50px;
+    height: 70px;
     text-indent: 20px;
+    justify-content: center;
     background-color: #e8ebf2;
     border: 1px solid #e8ebf2;
     border-radius: 5px;
     font-family: 'Arial';
     font-size: 16px;
     font-weight: bold;
+    color: #88878b;
     border-bottom: 2px solid #88878b;
     margin-top: 1em;
     appearance: none;
 }
 
+/* top = .list height/2 + .list fontSize - .list borderBottom */
 .triangle {
+    position: absolute;
+    top: 49px;
+    left: 270px;
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #88878b;
-    transform: rotate(90deg);
+    z-index: 1;
+}
+
+/*`${ ( (this.height / 2) - (this.placeholderFontSize / 2) ) / 3 }px`*/
+
+.title {
+    width: max-content;
+    color: #88878b;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 12px;
+    z-index: 1;
 }

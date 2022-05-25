@@ -1,0 +1,25 @@
+.wrapper {
+    margin-top: 3em;
+    margin-left: 6em;
+}
+
+.icon-button {
+    display: flex;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 0.8em;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 160px;
+    background-color: red;
+}
+
+.icon-button:hover {
+    opacity: 0.7;
+}
+
+.symbol {
+    font-size: 24px;
+}
+

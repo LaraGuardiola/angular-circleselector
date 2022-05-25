@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { faSliders, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-button',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconButtonComponent implements OnInit {
 
-  constructor() { }
+  //style of the symbol
+  @Input() symbol: IconDefinition
+
+  //style of the text
+  @Input() buttonText: string
+
+  constructor() { 
+    this.symbol = faSliders
+    this.buttonText = 'VER DETALLES'
+  }
 
   ngOnInit(): void {
   }

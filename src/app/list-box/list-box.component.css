@@ -15,21 +15,12 @@
     appearance: none;   
 }
 
-/* top = .list height/2 + .list fontSize - .list borderBottom */
 .triangle {
     position: absolute;
-    top: 49px;
-    left: 270px;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #88878b;
     z-index: 1;
 }
-
-
-/*`${ ( (this.height / 2) - (this.placeholderFontSize / 2) ) / 3 }px`*/
 
 .title {
     width: max-content;

@@ -25,6 +25,11 @@ export class ListBoxComponent implements OnInit {
   @Input() titleLeft: string
   @Input() titleFontSize: number
 
+  //position of the triangle
+  @Input() triangleTop: string
+  @Input() triangleLeft: string
+  @Input() triangleStandardSize: string
+  @Input() triangleColor: string
 
   constructor() {
     this.selectWidth = 300
@@ -40,6 +45,10 @@ export class ListBoxComponent implements OnInit {
     this.titleFontSize = 12
     this.titleTop = `${ ((this.selectHeight / 2) - (this.titleFontSize / 2)) / 3}px`
     this.titleLeft = '20px'
+    this.triangleTop = `${ (this.selectHeight / 2) + this.fontSize - 2 }px`
+    this.triangleLeft = `${ this.selectWidth - 30}px`
+    this.triangleStandardSize = '5px'
+    this.triangleColor = '#88878b'
     this.list = [
       'Autónomo',
       'Asalariado',
@@ -50,6 +59,7 @@ export class ListBoxComponent implements OnInit {
 
   @ViewChild('select') select: ElementRef | any
   @ViewChild('ptitle') ptitle: ElementRef | any
+  @ViewChild('triangle') triangle: ElementRef | any
 
   ngOnInit(): void {
   }
@@ -61,10 +71,11 @@ export class ListBoxComponent implements OnInit {
   setDefaultState(): void {
     this.setSelectDefaultState()
     this.setTitleDefaultState()
+    this.setTriangleDefaultState()
   }
 
   //setting up select style
-  setSelectDefaultState(){
+  setSelectDefaultState() {
     this.select.nativeElement.style.setProperty('width', this.selectWidth + 'px')
     this.select.nativeElement.style.setProperty('height', this.selectHeight + 'px')
     this.select.nativeElement.style.setProperty('background-color', this.selectBackgroundColor)
@@ -75,12 +86,20 @@ export class ListBoxComponent implements OnInit {
     this.select.nativeElement.style.setProperty('border-bottom', this.borderBottom)
   }
 
-  setTitleDefaultState(){
+  setTitleDefaultState() {
     this.ptitle.nativeElement.style.setProperty('color', this.titleColor)
     this.ptitle.nativeElement.style.setProperty('font-size', this.titleFontSize + 'px')
     this.ptitle.nativeElement.style.setProperty('top', this.titleTop)
     this.ptitle.nativeElement.style.setProperty('left', this.titleLeft)
   }
 
+  setTriangleDefaultState() {
+    this.triangle.nativeElement.style.setProperty('color', this.triangleColor)
+    this.triangle.nativeElement.style.setProperty('top', this.triangleTop)
+    this.triangle.nativeElement.style.setProperty('left', this.triangleLeft)
+    this.triangle.nativeElement.style.setProperty('border-top', `${this.triangleStandardSize} solid ${this.triangleColor}`)
+    this.triangle.nativeElement.style.setProperty('border-right', `${this.triangleStandardSize} solid transparent`)
+    this.triangle.nativeElement.style.setProperty('border-left', `${this.triangleStandardSize} solid transparent`)
+  }
 
 }

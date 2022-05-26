@@ -12,6 +12,7 @@ import { ListBoxComponent } from './list-box/list-box.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
 import { ButtonatorComponent } from './buttonator/buttonator.component';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     IconButtonComponent,
     ButtonatorComponent,
     RadioButtonComponent,
+    InfoBoxComponent,
   ],
   imports: [
     BrowserModule,

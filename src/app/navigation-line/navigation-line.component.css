@@ -6,8 +6,6 @@
 
 .navigation-line, .form {
     display: flex;
-    margin-top: 3em;
-    margin-left: 6em;
 }
 
 .nav-circle {

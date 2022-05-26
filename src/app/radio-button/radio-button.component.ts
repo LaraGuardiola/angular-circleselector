@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { faCheck, faSkull, faHelicopter, faVolcano, faVirusCovid, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, Input } from '@angular/core';
+import { faSkull, faVolcano, faVirusCovid, faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-radio-button',
@@ -8,19 +8,24 @@ import { faCheck, faSkull, faHelicopter, faVolcano, faVirusCovid, faTrophy } fro
 })
 export class RadioButtonComponent implements OnInit {
 
+  //style of the symbols
   @Input() symbol: any[]
   @Input() symbol1: any[]
 
+  //style of the texts
   @Input() mainText: string[]
 
+  //display if recommended div appears or not
   @Input() isRecommendedGroup: boolean[]
-  @Input() displayLists: boolean[]
+
+  //style and value of the radio buttons
   @Input() radioValues: boolean[]
   @Input() recommendedText: string
 
+  //style and visibility of the lists
+  @Input() displayLists: boolean[]
   @Input() list: string[]
   @Input() list1: string[]
-
   @Input() itemList: any[]
 
   constructor() {
@@ -68,13 +73,7 @@ export class RadioButtonComponent implements OnInit {
     ]
    }
 
-  ngOnInit(): void {
-    if(typeof this.radioValues[1] === 'boolean'){
-      console.log('es booleano')
-    }else{
-      console.log('no es booleano')
-    }
-  }
+  ngOnInit(): void {}
 
   onCheck(event: Event): void {
     let target = (event.target as HTMLInputElement)

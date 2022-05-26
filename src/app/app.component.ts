@@ -112,6 +112,7 @@ export class AppComponent {
     const { IconButtonComponent } = await import('./icon-button/icon-button.component')
     const { ButtonatorComponent } = await import('./buttonator/buttonator.component')
     const { RadioButtonComponent } = await import('./radio-button/radio-button.component')
+    const { InfoBoxComponent } = await import('./info-box/info-box.component')
 
     let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
@@ -135,6 +136,9 @@ export class AppComponent {
       }
       if(component === 'radiobutton'){
         this.anchor.createComponent(RadioButtonComponent)
+      }
+      if(component === 'infobox'){
+        this.anchor.createComponent(InfoBoxComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -164,6 +168,10 @@ export class AppComponent {
       if(component === 'radiobutton'){
         this.anchor.clear()
         this.anchor.createComponent(RadioButtonComponent)
+      }
+      if(component === 'infobox'){
+        this.anchor.clear()
+        this.anchor.createComponent(InfoBoxComponent)
       }
     }
     this.setClickedEffect(elem)

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCheck, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-radio-button',
@@ -7,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadioButtonComponent implements OnInit {
 
-  constructor() { }
+  @Input() symbol: IconDefinition | any
+  @Input() list: string[]
+
+  constructor() {
+    this.symbol = faCheck
+    this.list = [
+      "Envio de tus fondos antes",
+      "Formulario corto",
+      "Menos documentación"
+    ]
+   }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,19 @@
-<p>radio-button works!</p>
+<div class="radio-button">
+    <div class="radio-section">
+        <div class="radio">
+            <input class="radio-btn" type="radio" name="radio-button">
+        </div>
+        <div class="text">
+            <p>Si, cumplo con los requisitos y quiero una respuesta inmediata</p>
+        </div>
+    </div>
+    <div class="list">
+        <div class="ul-list">
+            <div class="list-item" *ngFor="let elem of list; let i = index">
+                <div class="icon"><fa-icon [icon]="symbol"></fa-icon></div>
+                <div class="paragraph">{{ list[i] }}</div>
+            </div>
+        </div>
+    </div>
+        
+</div>

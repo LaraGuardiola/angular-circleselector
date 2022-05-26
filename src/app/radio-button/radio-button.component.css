@@ -1,0 +1,58 @@
+.radio-button{
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: #f2f6f6;
+    box-shadow: 0 2px 4px 1px lightgray;
+    font-family: 'Arial';
+    padding: 0.6em;
+}
+
+.radio-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.radio, .text {
+    padding-right:0.6em;
+    padding-left:0.6em;
+}
+
+fieldset{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.radio-btn {
+    accent-color: #3b6e60;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+}
+    
+.ul-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon{
+    margin-right: 0.5em;
+    color: #18acb5;
+}

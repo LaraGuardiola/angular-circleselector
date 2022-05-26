@@ -1,13 +1,22 @@
+/* RADIO BUTTON */
+.wrapper {
+    display: flex;
+}
+
+
 .radio-button{
+    position: relative;
     border: 1px solid transparent;
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    width: 300px;
     border-radius: 5px;
     background-color: #f2f6f6;
-    box-shadow: 0 2px 4px 1px lightgray;
-    font-family: 'Arial';
+    box-shadow: 1px 2px 4px 2px lightgray;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 100;
     padding: 0.6em;
+    margin: 0.4em;
 }
 
 .radio-section {
@@ -22,17 +31,14 @@
     padding-left:0.6em;
 }
 
-fieldset{
-    margin: 0;
-    padding: 0;
-    border: none;
-}
 
 .radio-btn {
     accent-color: #3b6e60;
     width: 1.5em;
     height: 1.5em;
 }
+
+/* DIV.LIST */
 
 
 .list{
@@ -52,7 +58,31 @@ fieldset{
     flex-direction: row;
 }
 
+
+
 .icon{
     margin-right: 0.5em;
     color: #18acb5;
+    max-width: 16px;
+}
+
+/* DIV.RECOMMENDED */
+
+.recommended {
+    top: -15px;
+    left: 100px;
+    position: absolute;
+    background-color: #2cb1b6;
+    color: white;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.recommended > p {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }

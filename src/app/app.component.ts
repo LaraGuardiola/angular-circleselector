@@ -113,6 +113,7 @@ export class AppComponent {
     const { ButtonatorComponent } = await import('./buttonator/buttonator.component')
     const { RadioButtonComponent } = await import('./radio-button/radio-button.component')
     const { InfoBoxComponent } = await import('./info-box/info-box.component')
+    const { TileSelectorComponent } = await import('./tile-selector/tile-selector.component')
 
     let elem = ($event.target as HTMLElement);
     if(this.anchor.length === 0){
@@ -139,6 +140,9 @@ export class AppComponent {
       }
       if(component === 'infobox'){
         this.anchor.createComponent(InfoBoxComponent)
+      }
+      if(component === 'tileselector'){
+        this.anchor.createComponent(TileSelectorComponent)
       }
     }else{
       if(component === 'circleselector'){
@@ -172,6 +176,10 @@ export class AppComponent {
       if(component === 'infobox'){
         this.anchor.clear()
         this.anchor.createComponent(InfoBoxComponent)
+      }
+      if(component === 'tileselector'){
+        this.anchor.clear()
+        this.anchor.createComponent(TileSelectorComponent)
       }
     }
     this.setClickedEffect(elem)

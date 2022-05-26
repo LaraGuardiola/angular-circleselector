@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { faCommentDollar, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-info-box',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoBoxComponent implements OnInit {
 
-  constructor() { }
+  @Input() icon: IconDefinition
+
+  constructor() { 
+    this.icon = faCommentDollar
+  }
 
   ngOnInit(): void {
   }

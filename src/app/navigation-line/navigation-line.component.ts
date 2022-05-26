@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ElementRef, ViewChildren, ViewChild } from '@angular/core';
-import { faCheck, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faSkull, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -50,14 +50,15 @@ export class NavigationLineComponent implements OnInit {
   @ViewChild('nextBtn') nextBtn!: ElementRef | any
 
   constructor() {
-    this.elemList = ['Datos personales', 'Situación actual', 'Situación económica', 'Oferta', 'Identificación', 'Firma y documentación']
-    this.symbol = faCheck
+    this.elemList = ['Ni de coña', 'Me corto un brazo', 'Te lo corto a ti', 'Crippling depression', 'Seppuku']
+    //this.elemList = ['Datos personales', 'Situación actual', 'Situación económica', 'Oferta', 'Identificación', 'Firma y documentación']
+    this.symbol = faSkull
     this.size = 30
     this.lineWidth = 6
     this.lineHeight = 70
-    this.defaultValue = 1
+    this.defaultValue = 4
     this.defaultBGcolor = '#f0f1f8'
-    this.highlightedBGColor = '#18acb5'
+    this.highlightedBGColor = 'red'
     this.defaultListColor = '#d2d2d2'
     this.completeColor = 'black'
     this.listStyle = {

@@ -1,8 +1,8 @@
 <div class="wrapper">
-    <div *ngFor="let e of [].constructor(numOfRadioButtons); let i = index" class="radio-button">
+    <div *ngFor="let btn of displayLists; let i = index" class="radio-button">
         <div class="radio-section">
             <div class="radio">
-                <input class="radio-btn" type="radio" name="radio-button">
+                <input (change)="onCheck($event)" class="radio-btn" type="radio" name="radio-button" [value]="itemList[i].radioValues[i]">
             </div>
             <div class="text">
                 <p>{{ itemList[i].mainText[i] }}</p>

@@ -17,6 +17,7 @@ export class ButtonatorComponent implements OnInit {
   @Input() fontWeight: string;
   @Input() fontSize: string;
   @Input() height: string;
+  @Input() width?: string
 
   constructor() { 
     this.buttonText = 'VALIDAR'
@@ -28,7 +29,8 @@ export class ButtonatorComponent implements OnInit {
     this.fontFamily = 'Segoe UI'
     this.fontWeight = '600'
     this.fontSize = '1.5em'
-    this.height = 'auto'
+    this.width = '100vw'
+    this.height = '100vh'
   }
 
   @ViewChild('btn') btn: ElementRef | any
@@ -49,9 +51,13 @@ export class ButtonatorComponent implements OnInit {
     this.btn.nativeElement.style.setProperty('font-weight', this.fontWeight)
     this.btn.nativeElement.style.setProperty('font-size', this.fontSize)
     this.btn.nativeElement.style.setProperty('height', this.height)
+    if(this.width) {
+      this.btn.nativeElement.style.setProperty('width', this.width)
+    }
   }
 
   onClick(event: Event): void {
+    this.btn.nativeElement.style.setProperty('background-color', `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`)
     let btn = (event.target as HTMLElement)
     console.log(btn)
   }

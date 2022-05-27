@@ -5,15 +5,7 @@
               COMPONENTS
             </p>
             <ul class="menu-list">
-              <li (click)="loadComponent($event,'circleselector')"><a>Circle selector</a></li>
-              <li (click)="loadComponent($event,'navigationline')"><a>Navigation line</a></li>
-              <li (click)="loadComponent($event,'textbox')"><a>Text box</a></li>
-              <li (click)="loadComponent($event,'listbox')"><a>List box</a></li>
-              <li (click)="loadComponent($event,'iconbutton')"><a>Icon button</a></li>
-              <li (click)="loadComponent($event,'buttonator')"><a>Buttonator</a></li>
-              <li (click)="loadComponent($event,'radiobutton')"><a>Radio button</a></li>
-              <li (click)="loadComponent($event,'infobox')"><a>Info box</a></li>
-              <li (click)="loadComponent($event,'tileselector')"><a>Tile selector</a></li>
+              <li *ngFor="let comp of menuList; let i = index" (click)="loadComponent($event,menuList[i])" #menuitems><a>{{ menuList[i] }}</a></li>
             </ul>
         </aside>
     </div>
@@ -22,49 +14,3 @@
     </div>
 </div>
 
-
-
-<!--<div class="ui container">
-    <div class="ui secondary pointing menu">
-        <a (click)="loadComponent('circleselector')" class="item">Circle selector</a>
-        <a (click)="loadComponent('navigationline')" class="item">Navigation line</a>
-    </div>
-    <div class="ui segment">
-        <ng-container #anchor></ng-container>
-    </div>
-</div>-->
-
-<!--<app-circle-selector></app-circle-selector>
-<app-circle-selector
-    [title]="title" 
-    [numberList]="[1,2,3,6,12,24]" 
-    [highlightedBackground]="highlightedBackground"
-    [highlightedColor]="'black'"
-    [defaultBackground]="defaultBackground"
-    [defaultColor]="defaultColor"
-    [defaultValue]="1" 
-    [circleStyle]="circleStyle"
-    [titleStyle]="titleStyle"
-></app-circle-selector>
-
-<hr>
-
-<div class="nav-lists">
-    <app-navigation-line></app-navigation-line>
-    <app-navigation-line
-        [elemList]="['1','2','3','4','5','6']"
-        [symbol]="symbol"
-        [size]="size"
-        [lineHeight]='lineHeight'
-        [lineWidth]='lineWidth'
-        [defaultValue]="defaultValue"
-        [highlightedBGColor]="highlightedBGColor"
-        [defaultBGcolor]="defaultBGcolor"
-        [defaultListColor]="defaultListColor"
-        [completeColor]="completeColor"
-        [lineStyle]="lineStyle2"
-        [circleStyle]="circleStyle2"
-        [listStyle]="listStyle2"
-    >
-    </app-navigation-line>
-</div> -->

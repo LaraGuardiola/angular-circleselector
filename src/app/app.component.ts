@@ -76,7 +76,6 @@ export class AppComponent {
 
   setClickedEffect(elem: HTMLElement) {
     let i = this.menuList.indexOf(elem.innerText)
-    console.log(this.menuitems)
     this.menuitems.forEach((item: ElementRef, index: number) => {
       item.nativeElement.style.setProperty('background-color', '#ffffff');
       item.nativeElement.style.setProperty('color', '#000000')

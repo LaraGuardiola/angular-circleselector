@@ -8,15 +8,16 @@ import { Component, OnInit, Input, ViewChildren, ElementRef } from '@angular/cor
 export class TileSelectorComponent implements OnInit {
 
   @Input() btns: string[]
+  @Input() isDisabled: boolean
 
   constructor() { 
     this.btns = ['Señor', 'Señora']
+    this.isDisabled = false
   }
 
   @ViewChildren('buttons') buttons: ElementRef | any
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClick(event: Event): void {
     let btn = (event.target as HTMLButtonElement)
@@ -25,14 +26,13 @@ export class TileSelectorComponent implements OnInit {
   }
 
   setClickEffect(index: number): void {
-    console.log('do something')
     this.buttons._results.forEach((btn: ElementRef) => {
       btn.nativeElement.style.setProperty('background-color', '#ecf0f8')
       btn.nativeElement.style.setProperty('color', 'black')
       if(this.buttons._results.indexOf(btn) === index) {
         btn.nativeElement.style.setProperty('background-color', '#18afb6')
         btn.nativeElement.style.setProperty('color', 'white')
-      }else return
+      }
     })
   }
 }

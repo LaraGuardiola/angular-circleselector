@@ -4,8 +4,8 @@
             <p class="menu-label">
               COMPONENTS
             </p>
-            <ul class="menu-list">
-              <li *ngFor="let comp of menuList; let i = index" (click)="loadComponent($event,menuList[i])" #menuitems><a>{{ menuList[i] }}</a></li>
+            <ul class="menu-list" >
+              <li #menuitems *ngFor="let comp of menuList; let i = index" (click)="loadComponent($event,menuList[i])">{{ menuList[i] }}</li>
             </ul>
         </aside>
     </div>

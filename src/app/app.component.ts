@@ -24,13 +24,13 @@ export class AppComponent {
   }
   
   @ViewChild('anchor', { read: ViewContainerRef }) anchor: ViewContainerRef | any;
-  @ViewChildren('menu') menuitems: ElementRef | any
+  @ViewChildren('menuitems') menuitems: ElementRef | any
 
   async loadComponent($event: Event, component: string) {
 
     let elem = ($event.target as HTMLElement);
 
-    // deconstructing the component in order to get the class
+    // Components will be lazy loaded - deconstructing the component in order to get the class
     const { CircleSelectorComponent } = await import('./circle-selector/circle-selector.component')
     const { NavigationLineComponent } = await import('./navigation-line/navigation-line.component')
     const { TextBoxComponent } = await import('./text-box/text-box.component')
@@ -75,13 +75,17 @@ export class AppComponent {
   }
 
   setClickedEffect(elem: HTMLElement) {
-    for(let item of this.menuitems._results){
+    let i = this.menuList.indexOf(elem.innerText)
+    console.log(this.menuitems)
+    this.menuitems.forEach((item: ElementRef, index: number) => {
       item.nativeElement.style.setProperty('background-color', '#ffffff');
       item.nativeElement.style.setProperty('color', '#000000')
-      if(elem === item.nativeElement){
-        item.nativeElement.style.setProperty('background-color', '#000000');
+      if(i === index){
+        item.nativeElement.style.setProperty('background-color', '#18afb6');
         item.nativeElement.style.setProperty('color', '#ffffff')
       }
-    }
+    })
   }
 }
+
+

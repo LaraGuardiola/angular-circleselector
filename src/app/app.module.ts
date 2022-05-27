@@ -15,6 +15,7 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { TileSelectorComponent } from './tile-selector/tile-selector.component';
 import { BypassSanitizerPipe } from './bypass-sanitizer.pipe';
+import { NavigationSectionComponent } from './navigation-section/navigation-section.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { BypassSanitizerPipe } from './bypass-sanitizer.pipe';
     InfoBoxComponent,
     TileSelectorComponent,
     BypassSanitizerPipe,
+    NavigationSectionComponent,
   ],
   imports: [
     BrowserModule,

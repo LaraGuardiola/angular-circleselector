@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild, ViewChildren, ViewContainerRef} from '@angular/core';
+import { IconDefinition, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
       'buttonator',
       'radiobutton',
       'infobox',
-      'tileselector'
+      'tileselector',
+      'navigationsection'
     ]
   }
   
@@ -40,6 +42,7 @@ export class AppComponent {
     const { RadioButtonComponent } = await import('./radio-button/radio-button.component')
     const { InfoBoxComponent } = await import('./info-box/info-box.component')
     const { TileSelectorComponent } = await import('./tile-selector/tile-selector.component')
+    const { NavigationSectionComponent } = await import('./navigation-section/navigation-section.component')
 
     //array of components
     const comps = await Promise.all([ 
@@ -51,7 +54,8 @@ export class AppComponent {
       ButtonatorComponent,
       RadioButtonComponent,
       InfoBoxComponent,
-      TileSelectorComponent
+      TileSelectorComponent,
+      NavigationSectionComponent
     ])
 
     this.clearAndCreateComponent(comps, component)

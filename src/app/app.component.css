@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-
 .nav-lists {
     display: flex;
 }
+
 .main{
     display: flex;
     font-family: Arial;

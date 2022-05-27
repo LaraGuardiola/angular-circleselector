@@ -39,7 +39,7 @@ export class RadioButtonComponent implements OnInit {
     this.symbol1 = [faVolcano, faSkull]
 
     this.mainText = [
-      'Sí, cumplo con los requisitos y quiero una respuesta inmediata',
+      '<strong>Sí</strong>, cumplo con los requisitos y quiero una respuesta inmediata',
       'No, no quiero beneficiarme de las ventajas de BankReady'
     ]
 

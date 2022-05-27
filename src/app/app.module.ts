@@ -14,6 +14,7 @@ import { ButtonatorComponent } from './buttonator/buttonator.component';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { TileSelectorComponent } from './tile-selector/tile-selector.component';
+import { BypassSanitizerPipe } from './bypass-sanitizer.pipe';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { TileSelectorComponent } from './tile-selector/tile-selector.component';
     RadioButtonComponent,
     InfoBoxComponent,
     TileSelectorComponent,
+    BypassSanitizerPipe,
   ],
   imports: [
     BrowserModule,

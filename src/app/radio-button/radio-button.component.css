@@ -71,6 +71,7 @@
     position: absolute;
     background-color: #2cb1b6;
     color: white;
+    font-weight: 600;
     height: 30px;
     padding: 0;
     display: flex;

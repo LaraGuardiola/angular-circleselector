@@ -7,10 +7,12 @@
     border-radius: 5px;
     color: #3e9fa0;
 }
+
 .icon{
     padding: 0.5em;
     font-size: 2em;
 }
+
 .text {
     display: flex;
     flex-direction: column;
@@ -19,10 +21,13 @@
 }
 
 .first-text{
-    justify-self: start;
+    height: 100%;
+    margin: 0;
 }
 
 .second-text {
     font-weight: 100;
+    margin:0;
+    padding-top: 0.5em;
 }
 
